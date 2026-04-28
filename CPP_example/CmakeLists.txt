@@ -1,0 +1,18 @@
+# 指定编译器路径（绝对路径）
+set(CMAKE_C_COMPILER "D:/Program Files/mingw64/bin/gcc.exe")
+set(CMAKE_CXX_COMPILER "D:/Program Files/mingw64/bin/g++.exe")
+
+
+# 指定最低 CMake 版本
+cmake_minimum_required(VERSION 3.10)
+
+# 设置项目名称和版本
+project(MyProject)
+
+# 指定 C++ 标准
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+# 添加可执行文件
+add_executable(my_program main.cpp)
