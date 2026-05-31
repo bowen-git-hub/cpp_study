@@ -17,7 +17,7 @@ int main() {
 
     cout<<"size of long int is "<< sizeof(111l) <<" bypes\n";
 
-
+    
 
     bool x = false; //true == 1
     cout<<"bool is "<< x << endl;
