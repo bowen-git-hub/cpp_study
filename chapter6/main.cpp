@@ -1,43 +1,41 @@
-#include <iostream>
-
+#include "iostream"
 using namespace std;
 
-
-class Circle {
-    private:
-        double radius;
-    public:
-        Circle()
-        :radius(5.0)
-        {
-            if(radius < 0){
-                cout << "Radius cannot be negative" << endl;
-            }
-            cout << "Circle constructor called" << endl;
-        };
-        ~Circle(){
-            cout << "Circle destructor called" << endl;
-        };
-        double getradius() const;
-        void setradius(double value);
-};
+void swapValues(int &x, int &y);
 
 int main() {
-    Circle circle;
-    cout << "The radius of the circle is: " << circle.getradius() << endl;
-    circle.setradius(-5.12);
-    cout << "The radius of the circle is: " << circle.getradius() << endl;
-    cout << "the end of the program" << endl;
+    int a = 5;
+    int b = 10;
+
+    cout << "before swap: a=" << a << ", b=" << b << endl;
+    swapValues(a, b);
+    cout << "after  swap: a=" << a << ", b=" << b << endl;
+
+    return 0;
 }
 
 
-
-
-
-double Circle::getradius() const {
-    return radius;
+//default parameter value
+double calc(double a, double b = 1.0){
+    return a * b;
 }
 
-void Circle::setradius(double value) {
-    radius = value;
+//function overloading
+int max(int a, int b){
+    return (a > b) ? a : b;
+}
+
+int max(int a, int b, int c){
+    return max(max(a, b), c);
+}
+
+double max(double a, double b){
+    return (a > b) ? a : b;
+}
+
+//pass by reference
+void swapValues(int &x, int &y) {//&可以改变传入的值
+    int temp = x;
+    x = y;
+    y = temp;
 }
